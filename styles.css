@@ -1,0 +1,268 @@
+/* Configurações Gerais - Dark Mode Estrito */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #121212;
+    color: #F5F5F5;
+    line-height: 1.6;
+}
+
+/* Navbar Responsiva */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: #1a1a1a;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #FF4500;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: #FF4500;
+}
+
+.menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    color: #F5F5F5;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    background-color: #1a1a1a;
+    flex-direction: column;
+    text-align: center;
+    border-bottom: 2px solid #FF4500;
+}
+
+.nav-links.active {
+    display: flex;
+}
+
+.nav-links a {
+    color: #F5F5F5;
+    padding: 15px;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+/* Hero Section */
+.hero {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    background: linear-gradient(rgba(18, 18, 18, 0.7), rgba(18, 18, 18, 0.9)), url('https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=600') no-repeat center center/cover;
+}
+
+.hero-content h1 {
+    font-size: 32px;
+    color: #F5F5F5;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 16px;
+    margin-bottom: 25px;
+    color: #cccccc;
+}
+
+.btn-cta {
+    display: inline-block;
+    background-color: #FF4500;
+    color: #F5F5F5;
+    padding: 14px 28px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    letter-spacing: 1px;
+}
+
+/* Layout Seções (Mobile First = 1 Coluna Padrão) */
+.section-padding {
+    padding: 60px 20px;
+}
+
+.bg-alt {
+    background-color: #181818;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #FF4500;
+    margin: 8px auto 0 auto;
+}
+
+.grid-container {
+    display: block; /* Força empilhamento vertical em telas pequenas */
+}
+
+.card {
+    background-color: #222222;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #FF4500;
+}
+
+/* Card Preços */
+.card-price {
+    text-align: center;
+    border-left: none;
+    border-top: 4px solid #333;
+}
+
+.card-price.featured {
+    border-top: 4px solid #FF4500;
+    position: relative;
+}
+
+.badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #FF4500;
+    padding: 3px 10px;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+.price {
+    font-size: 36px;
+    font-weight: bold;
+    color: #FF4500;
+    margin: 15px 0;
+}
+
+.price span {
+    font-size: 14px;
+    color: #aaa;
+}
+
+.btn-card {
+    display: block;
+    background-color: #333;
+    color: #FFF;
+    padding: 10px;
+    text-decoration: none;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.featured .btn-card {
+    background-color: #FF4500;
+}
+
+/* Contato */
+.contact-info p {
+    margin-bottom: 15px;
+    background-color: #1e1e1e;
+    padding: 12px;
+    border-radius: 5px;
+}
+
+/* Botão Fixo WhatsApp */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    text-decoration: none;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+/* Footer */
+footer {
+    background-color: #1a1a1a;
+    text-align: center;
+    padding: 20px;
+    font-size: 13px;
+    color: #666;
+    border-top: 1px solid #222;
+}
+
+/* 💻 Media Query para Telas Maiores (Desktop / Notebooks) */
+@media (min-width: 768px) {
+    .menu-toggle {
+        display: none;
+    }
+    
+    .nav-links {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        width: auto;
+        border-bottom: none;
+    }
+    
+    .nav-links a {
+        border-bottom: none;
+        padding: 0 15px;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+    
+    .card {
+        margin-bottom: 0;
+    }
+    
+    .hero-content h1 {
+        font-size: 48px;
+    }
+    
+    .card:hover {
+        transform: translateY(-5px);
+        transition: 0.3s ease;
+    }
+}
