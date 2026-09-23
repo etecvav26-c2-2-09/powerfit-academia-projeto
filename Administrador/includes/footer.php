@@ -1,0 +1,18 @@
+<?php
+/**
+ * ===========================================================
+ * includes/footer.php - PowerFit Academia
+ * ===========================================================
+ * Autor: Luan Alves Padovani
+ *
+ * Fecha a estrutura HTML aberta em header.php.
+ * Incluir no final de cada página do painel:
+ *     require_once __DIR__ . '/../includes/footer.php';
+ * ===========================================================
+ */
+?>
+    </main>
+</div>
+
+</body>
+</html>
