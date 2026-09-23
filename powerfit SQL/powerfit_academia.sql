@@ -1,8 +1,7 @@
 -- ============================================================
 -- PowerFit Academia - Script de criação do banco de dados
 -- Disciplina: Programação Web II
--- SGBD: MySQL (InnoDB)
--- ============================================================
+
 
 CREATE DATABASE IF NOT EXISTS powerfit_academia
     CHARACTER SET utf8mb4
@@ -10,12 +9,7 @@ CREATE DATABASE IF NOT EXISTS powerfit_academia
 
 USE powerfit_academia;
 
--- ------------------------------------------------------------
--- Tabela: planos
--- Guarda os planos de assinatura que a academia oferece
--- (ex: Mensal, Semestral, Anual). Cada aluno estará vinculado
--- a um único plano.
--- ------------------------------------------------------------
+
 CREATE TABLE planos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(50) NOT NULL,
@@ -23,24 +17,14 @@ CREATE TABLE planos (
     descricao TEXT
 ) ENGINE=InnoDB;
 
--- ------------------------------------------------------------
--- Tabela: modalidades
--- Guarda as modalidades/atividades oferecidas pela academia
--- (ex: Musculação, Funcional, Ritmos, Lutas). Cada aluno
--- estará vinculado a uma modalidade principal.
--- ------------------------------------------------------------
+
 CREATE TABLE modalidades (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(50) NOT NULL,
     descricao TEXT
 ) ENGINE=InnoDB;
 
--- ------------------------------------------------------------
--- Tabela: alunos
--- Guarda os dados cadastrais de cada aluno matriculado.
--- Relaciona-se com "planos" (qual plano o aluno contratou) e
--- com "modalidades" (qual atividade o aluno pratica).
--- ------------------------------------------------------------
+
 CREATE TABLE alunos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(150) NOT NULL,
