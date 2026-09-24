@@ -1,0 +1,147 @@
+/* ==========================================================
+   PowerFit Academia - Painel Administrativo
+   Usado por Administrador/includes/header.php
+   Cores da identidade visual (README): #FF4500, #121212, #F5F5F5
+   ========================================================== */
+
+:root {
+  --adm-destaque: #ff4500;
+  --adm-destaque-hover: #e03d00;
+  --adm-fundo: #121212;
+  --adm-painel: #1e1e1e;
+  --adm-borda: #333333;
+  --adm-texto: #f5f5f5;
+  --adm-texto-suave: #a8a8a8;
+  --adm-perigo: #b00020;
+  --adm-sucesso: #1b5e20;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--adm-fundo);
+  color: var(--adm-texto);
+  font-family: 'Roboto', Arial, sans-serif;
+  line-height: 1.5;
+}
+
+a { color: var(--adm-destaque); text-decoration: none; }
+
+/* ---------- Estrutura: sidebar + conteúdo ---------- */
+.admin-wrapper { display: flex; min-height: 100vh; }
+
+.admin-sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  background: #0b0b0b;
+  border-right: 1px solid var(--adm-borda);
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-logo { padding: 1.5rem 1.25rem; font-size: 1.6rem; font-weight: 700; border-bottom: 1px solid var(--adm-borda); }
+.sidebar-logo-fit { color: var(--adm-destaque); }
+.sidebar-logo small { display: block; font-size: 0.75rem; font-weight: 400; color: var(--adm-texto-suave); letter-spacing: 2px; text-transform: uppercase; }
+
+.sidebar-menu { flex: 1; padding: 1rem 0; }
+.sidebar-menu ul { list-style: none; }
+.sidebar-menu li a {
+  display: block;
+  padding: 0.85rem 1.25rem;
+  color: var(--adm-texto);
+  border-left: 4px solid transparent;
+  transition: background 0.2s ease;
+}
+.sidebar-menu li a:hover { background: var(--adm-painel); }
+.sidebar-menu li.ativo a { background: var(--adm-painel); border-left-color: var(--adm-destaque); color: var(--adm-destaque); font-weight: 500; }
+.sidebar-menu .icone { display: inline-block; width: 1.6rem; }
+
+.sidebar-rodape { padding: 1rem 1.25rem; border-top: 1px solid var(--adm-borda); color: var(--adm-texto-suave); }
+
+.admin-conteudo { flex: 1; min-width: 0; padding: 2rem; }
+
+/* ---------- Topo de página ---------- */
+.pagina-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.pagina-topo h1 { font-size: 1.8rem; color: var(--adm-destaque); }
+
+/* ---------- Botões ---------- */
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+}
+.btn-primario { background: var(--adm-destaque); color: #121212; }
+.btn-primario:hover { background: var(--adm-destaque-hover); }
+.btn-secundario { background: var(--adm-borda); color: var(--adm-texto); }
+.btn-secundario:hover { background: #444444; }
+.btn-perigo { background: var(--adm-perigo); color: #ffffff; }
+.btn-perigo:hover { background: #8e001a; }
+
+.acoes-form { display: flex; gap: 0.75rem; align-items: center; margin-top: 1rem; }
+
+/* ---------- Alertas ---------- */
+.alerta { padding: 0.8rem 1rem; border-radius: 6px; margin-bottom: 1.25rem; }
+.alerta-sucesso { background: var(--adm-sucesso); color: #ffffff; }
+.alerta-erro { background: var(--adm-perigo); color: #ffffff; }
+
+/* ---------- Tabelas ---------- */
+.tabela-wrap { overflow-x: auto; }
+
+.tabela-padrao { width: 100%; border-collapse: collapse; background: var(--adm-painel); border-radius: 8px; overflow: hidden; }
+.tabela-padrao th,
+.tabela-padrao td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid var(--adm-borda); vertical-align: top; }
+.tabela-padrao th { color: var(--adm-destaque); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
+.tabela-padrao tr:last-child td { border-bottom: none; }
+
+.acoes-tabela { white-space: nowrap; }
+.link-editar,
+.link-excluir { display: inline-block; padding: 0.3rem 0.7rem; border-radius: 4px; font-size: 0.85rem; margin-right: 0.3rem; }
+.link-editar { background: var(--adm-borda); color: var(--adm-texto); }
+.link-editar:hover { background: #444444; }
+.link-excluir { background: var(--adm-perigo); color: #ffffff; }
+.link-excluir:hover { background: #8e001a; }
+
+/* ---------- Formulários ---------- */
+.form-padrao { max-width: 480px; display: flex; flex-direction: column; gap: 0.5rem; }
+.form-padrao label { font-size: 0.9rem; margin-top: 0.5rem; }
+.form-padrao input,
+.form-padrao select,
+.form-padrao textarea {
+  padding: 0.65rem;
+  border-radius: 6px;
+  border: 1px solid #444444;
+  background: var(--adm-painel);
+  color: var(--adm-texto);
+  font-family: inherit;
+  font-size: 1rem;
+}
+.form-padrao input:focus,
+.form-padrao select:focus,
+.form-padrao textarea:focus { outline: 2px solid var(--adm-destaque); border-color: transparent; }
+.form-padrao textarea { min-height: 110px; resize: vertical; }
+.form-padrao button { margin-top: 1rem; }
+
+/* ---------- Celular: sidebar vira menu no topo ---------- */
+@media (max-width: 800px) {
+  .admin-wrapper { flex-direction: column; }
+  .admin-sidebar { width: 100%; border-right: none; border-bottom: 1px solid var(--adm-borda); }
+  .sidebar-logo { padding: 1rem; }
+  .sidebar-menu { padding: 0; }
+  .sidebar-menu ul { display: flex; overflow-x: auto; }
+  .sidebar-menu li a { white-space: nowrap; border-left: none; border-bottom: 3px solid transparent; padding: 0.75rem 1rem; }
+  .sidebar-menu li.ativo a { border-bottom-color: var(--adm-destaque); }
+  .sidebar-rodape { display: none; }
+  .admin-conteudo { padding: 1.25rem; }
+}
